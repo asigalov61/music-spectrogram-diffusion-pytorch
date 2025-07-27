@@ -18,7 +18,7 @@ def cli_main():
                 ModelCheckpoint(
                     save_top_k=-1,
                     save_last=True,
-                    every_n_train_steps=500,
+                    every_n_train_steps=100,
                     filename='{epoch}-{step}',
                 ),
                 ModelSummary(max_depth=4)
