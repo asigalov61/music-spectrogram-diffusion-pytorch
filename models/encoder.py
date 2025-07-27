@@ -27,7 +27,7 @@ class MultiheadAttention(nn.Module):
         xavier_uniform_(self.k_proj.weight.data)
         xavier_uniform_(self.v_proj.weight.data)
 
-    def forward(self, query, key, value, key_padding_mask=None, need_weights=True, attn_mask=None, average_attn_weights=True):
+    def forward(self, query, key, value, key_padding_mask=None, need_weights=True, attn_mask=None, average_attn_weights=True, **kwargs):
         B, T, _ = query.size()
         Q = self.q_proj(query).view(B, T, self.num_heads,
                                     self.head_dim).transpose(1, 2)
