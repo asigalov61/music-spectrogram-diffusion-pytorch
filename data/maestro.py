@@ -28,11 +28,16 @@ class Maestro(Base):
         data_list = []
         print("Loading Maestro...")
         for track_id, (wav_file, midi_file) in tqdm(mapping.items()):
-            info = sf.info(wav_file)
-            sr = info.samplerate
-            frames = info.frames
-            ns = note_seq.midi_file_to_note_sequence(midi_file)
-            ns = note_seq.apply_sustain_control_changes(ns)
-            data_list.append((wav_file, ns, sr, frames))
+
+            try:
+                info = sf.info(wav_file)
+                sr = info.samplerate
+                frames = info.frames
+                ns = note_seq.midi_file_to_note_sequence(midi_file)
+                ns = note_seq.apply_sustain_control_changes(ns)
+                data_list.append((wav_file, ns, sr, frames))
+
+            except:
+                continue
 
         super().__init__(data_list, **kwargs)
