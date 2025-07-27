@@ -91,10 +91,10 @@ model:
 data:
   class_path: lightning.data.ConcatData
   init_args:
-    batch_size: 24
+    batch_size: 32
     midi_output_size: null
     with_context: true
-    sample_rate: 44100
+    sample_rate: 16000
     segment_length: 81920
     musicnet_path: null
     maestro_path: /home/ubuntu/MAESTRO/maestro-v3.0.0/
