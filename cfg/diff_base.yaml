@@ -7,29 +7,30 @@ trainer:
   default_root_dir: null
   gradient_clip_val: null
   gradient_clip_algorithm: null
+  accumulate_grad_batches: 8
   num_nodes: 1
-  num_processes: null
-  devices: null
-  gpus: null
-  auto_select_gpus: false
-  tpu_cores: null
-  ipus: null
+  precision: bf16-true
+  # num_processes: null
+  devices: 1
+  # gpus: null
+  #auto_select_gpus: false
+  #tpu_cores: null
+  #ipus: null
   enable_progress_bar: true
   overfit_batches: 0.0
-  track_grad_norm: -1
-  check_val_every_n_epoch: 1
+  #track_grad_norm: -1
+  # check_val_every_n_epoch: 1
   fast_dev_run: false
-  accumulate_grad_batches: null
   max_epochs: null
   min_epochs: null
   max_steps: 500000
   min_steps: null
   max_time: null
   limit_train_batches: null
-  limit_val_batches: null
+  # limit_val_batches: null
   limit_test_batches: null
   limit_predict_batches: null
-  val_check_interval: null
+  # val_check_interval: null
   log_every_n_steps: 1
   accelerator: gpu
   strategy: ddp
@@ -37,20 +38,20 @@ trainer:
   precision: 32
   enable_model_summary: true
   num_sanity_val_steps: 2
-  resume_from_checkpoint: null
+  # resume_from_checkpoint: null
   profiler: null
   benchmark: null
   deterministic: null
   reload_dataloaders_every_n_epochs: 0
-  auto_lr_find: false
-  replace_sampler_ddp: true
+  # auto_lr_find: false
+  # replace_sampler_ddp: true
   detect_anomaly: false
-  auto_scale_batch_size: false
+  #auto_scale_batch_size: false
   plugins: null
-  amp_backend: native
-  amp_level: null
-  move_metrics_to_cpu: false
-  multiple_trainloader_mode: max_size_cycle
+  # amp_backend: native
+  #amp_level: null
+  # move_metrics_to_cpu: false
+  # multiple_trainloader_mode: max_size_cycle
   inference_mode: true
 ckpt_path: null
 model:
@@ -90,14 +91,14 @@ model:
 data:
   class_path: lightning.data.ConcatData
   init_args:
-    batch_size: 2
+    batch_size: 24
     midi_output_size: null
     with_context: true
     sample_rate: 16000
     segment_length: 81920
-    musicnet_path: /import/c4dm-datasets/musicnet/
-    maestro_path: /import/c4dm-datasets/maestro-v3.0.0/
-    slakh_path: /import/c4dm-datasets/Slakh/slakh2100_flac_redux/
-    guitarset_path: /import/c4dm-datasets/GuitarSet/
-    urmp_wav_path: /import/c4dm-datasets/URMP/Dataset/
-    urmp_midi_path: /import/c4dm-datasets/URMP-clean-midi/
+    musicnet_path: null
+    maestro_path: /home/ubuntu/MAESTRO/maestro-v3.0.0/
+    slakh_path: null
+    guitarset_path: null
+    urmp_wav_path: null
+    urmp_midi_path: null
