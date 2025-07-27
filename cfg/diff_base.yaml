@@ -35,7 +35,6 @@ trainer:
   accelerator: gpu
   strategy: ddp
   sync_batchnorm: false
-  precision: 32
   enable_model_summary: true
   num_sanity_val_steps: 2
   # resume_from_checkpoint: null
