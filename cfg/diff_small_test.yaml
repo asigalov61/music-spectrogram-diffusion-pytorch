@@ -61,14 +61,14 @@ model:
     output_dim: 128
     max_input_length: 3000
     max_output_length: 257
-    emb_dim: 512
-    dim_feedforward: 1024
-    nhead: 6
+    emb_dim: 758
+    dim_feedforward: 2048
+    nhead: 12
     head_dim: 64
-    num_layers: 8
+    num_layers: 12
     cfg_dropout: 0.1
     cfg_weighting: 2.0
-    with_context: false
+    with_context: true
     dropout: 0.1
     layer_norm_eps: 1.0e-05
     norm_first: true
