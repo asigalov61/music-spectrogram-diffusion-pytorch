@@ -9,7 +9,7 @@ trainer:
   gradient_clip_algorithm: null
   accumulate_grad_batches: 8
   num_nodes: 1
-  precision: bf16-true
+  precision: 16
   # num_processes: null
   devices: 1
   # gpus: null
